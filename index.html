@@ -5,60 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>fakestore .</title>
+    <title>fackstore</title>
 
 </head>
 
 <body>
 
-    <header class=>
-
+    <header class="flex items-center justify-between px-15 py-4 bg-orange-500">
         <div>
-            <input type="text" placeholder="Digite o nome do produto" />
+            <input onkeyup="pesquisarProdutos(event.target.value)" type="text" placeholder="Digite o nome do produto"  class="w-120 h-10 rounded bg-white pl-4" />
         </div>
         <div>
-            <select>id="categorias">
-                ion>men's clothing</option>
-                <option>wonen's clothing</option>
-                <option>eletronics</option>
-                <option>jewlery</option>
+            <select id="categoria" onchange="filtrarProdutos(event.target.value)" class="h-10 rounded bg-white pl-4"> 
+                <option selected disabled>Filtrar produtos</option>
+                <option>All</option>
+                <option>men's clothing</option>
+                <option>women's clothing</option>
+                <option>electronics</option>
+                <option>jewelery</option>
             </select>
-            <select id="ordenacao">
-
-                <option value="prece">Ordenar por Preço </option>
+            <select id="ordenacao" onchange="ordenarProdutos(event.target.value)"  class="h-10 rounded bg-white pl-4"> class= 
+                <option value="preco">Ordenar por Preço </option>
                 <option value="nota">Informar por avaliação </option>
-
-
-
             </select>
+
         </div>
-
-
     </header>
 
-    <main class="p 15">
-        <div id="cards" class="grid grid-cols-4 gap-4">
-            <div class="bg-white rounded p-4">
-                <div class="relative">
-                    <img src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png" alt="" class="w-fall h-55"
-                        object-contain">
-<div class="pt-4">
-    <h2 class="font-semibold text-xl">Nome do produto</h2>
-    <h2 class="font-bold">categoria</h2>
-    <h2 class="text-right text-2x1">R$ 0,00</h2>
-</div>
-
-
-
-
-                </div>
-
-                >
-            </div>
-
-        </div>
+    <main class="p-15 bg">
+        <div id="cards" class="grid grid-cols-4 gap-4"></div>
     </main>
-
+    <script src="index.js"></script>
 </body>
 
 </html>
